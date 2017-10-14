@@ -30,7 +30,7 @@ Other Sources: ( cloning )
 
 * Kernel Source
   ---------------
-```git clone ttps://github.com/kode-61/android_kernel_motorola_woods kernel/motorola/woods ```
+```git clone https://github.com/kode-61/android_kernel_motorola_woods kernel/motorola/woods ```
 
 * Vendor 
   --------

@@ -75,7 +75,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_KMODULES := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := Moto_E4,Moto E4,moto_e4,woods,woods_f
+TARGET_OTA_ASSERT_DEVICE := Moto_E4,Moto E4,moto_e4,e4,woods,woods_f
 
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
@@ -188,12 +188,12 @@ TARGET_SYSTEM_PROP := device/motorola/woods/system.prop
 TARGET_SPECIFIC_HEADER_PATH := device/motorola/woods/include
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
-#fneq ($(FORCE_32_BIT),yes)
-#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote32
-#else
+ifneq ($(FORCE_32_BIT),yes)
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote32
+else
 PRODUCT_COPY_FILES += system/core/rootdir/init.zygote64_32.rc:root/init.zygote64_32.rc
-#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32
-#endif
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32
+endif
 
 BOARD_SEPOLICY_DIRS := \
        device/motorola/woods/sepolicy

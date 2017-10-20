@@ -17,7 +17,7 @@ Display | 720 x 1280 pixels, 5.0 inches
 Camera  | Main 8MP / Front 5MP, autofocus, LED flash
 
 Copyright 2017 - The LineageOS Project.
-Thanks to igor1144, olegsvs, Decker, danielhk, mdeejay, Zormax, SRT.
+Thanks to darklord4822, igor1144, olegsvs, Decker, danielhk, mdeejay, Zormax, SRT.
 
 ![motorola E4](http://www.digitik.ru/upload/iblock/dd7/dd77003d77e62a8d7b9eb0d840bd3e77.jpg "motorola E4")
 

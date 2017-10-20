@@ -223,7 +223,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareWakeKeys">79</integer>
+    <!-- <integer name="config_deviceHardwareWakeKeys">79</integer> -->
 
     
     <!-- Performance profiles -->
@@ -276,16 +276,16 @@
     <string translatable="false" name="config_radio_access_family">LTE | GSM | WCDMA</string>
     
     <!-- Whether to use TMO LTE singnal strength threshold -->
-    <bool name="config_regional_lte_singnal_threshold">true</bool>
+    <!-- <bool name="config_regional_lte_singnal_threshold">true</bool> -->
     
-    <integer-array name="lte_signal_strength_threshold">
+    <!-- <integer-array name="lte_signal_strength_threshold">
         <item>-140</item>
         <item>-125</item>
         <item>-120</item>
         <item>-115</item>
         <item>-105</item>
         <item>-44</item>
-    </integer-array>      
+    </integer-array> -->     
 
     <!-- Boolean indicating if current platform supports BLE peripheral mode -->
     <bool name="config_bluetooth_le_peripheral_mode_supported">false</bool>

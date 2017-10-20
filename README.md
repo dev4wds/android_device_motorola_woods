@@ -34,5 +34,5 @@ Other Sources: ( cloning )
 
 * Vendor 
   --------
-```git clone https://github.com/dev4wds/android_vendor_motorola_woods vendor/motorola/woods ```
+```git clone https://github.com/dev4wds/android_vendor_motorola_woods -b validus-n vendor/motorola/woods ```
 

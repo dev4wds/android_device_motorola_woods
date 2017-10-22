@@ -1,5 +1,5 @@
 # Common
-DEVICE_PACKAGE_PATH += vendor/dev4wds
+DEVICE_PACKAGE_PATH += device/motorola/woods/vendor/dev4wds
 
 # Bootanimation
 PRODUCT_COPY_FILES += \

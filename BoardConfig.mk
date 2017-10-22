@@ -200,3 +200,6 @@ BOARD_SEPOLICY_DIRS := \
 
 # Seccomp filter
 BOARD_SECCOMP_POLICY += device/motorola/woods/seccomp
+
+# add prebuilt bootanimation
+-include device/motorola/woods/vendor/dev4wds/common.mk

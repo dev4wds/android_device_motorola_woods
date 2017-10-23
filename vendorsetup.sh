@@ -1,4 +1,4 @@
-# Use this to add P1m to CM's lunch command menu
+# Use this to add woods to cos lunch command menu
 for var in userdebug; do
-  add_lunch_combo aicp_woods-$var
+  add_lunch_combo cos_woods-$var
 done

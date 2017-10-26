@@ -164,6 +164,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Keyhandler package
 PRODUCT_PACKAGES += \
     com.cyanogenmod.keyhandler
+    
+ # Busybox
+PRODUCT_PACKAGES += \
+    busybox
 
 PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
 

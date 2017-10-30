@@ -3,7 +3,7 @@
 # Release name
 PRODUCT_RELEASE_NAME := woods
 
-# Inherit some common xenonhd stuff
+# Inherit some common viper stuff
 $(call inherit-product, vendor/viper/config/common_full_phone.mk)
 
 # Inherit device configuration
@@ -28,16 +28,3 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 # Available languages
 PRODUCT_LOCALES := en_US en_GB ru_RU uk_UA tr_TR sk_SK vi_VN fr_FR ar_EG
-
-# XenonHD stuff
-ROOT_METHOD=magisk
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.xenonhd.maintainer=zac6ix
-
-# Extra prebuilt apps
-PRODUCT_PACKAGES += \
-    AdAway \
-    KernelAdiutor \
-    MiXplorer
-    
-    

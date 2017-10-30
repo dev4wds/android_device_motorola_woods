@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-$(LOCAL_DIR)/xenonhd.mk
+$(LOCAL_DIR)/viper.mk

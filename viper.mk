@@ -4,7 +4,7 @@
 PRODUCT_RELEASE_NAME := woods
 
 # Inherit some common xenonhd stuff
-$(call inherit-product, vendor/xenonhd/config/common_full_phone.mk)
+$(call inherit-product, vendor/viper/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/motorola/woods/device_woods.mk)
@@ -19,7 +19,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := woods
-PRODUCT_NAME := xenonhd_woods
+PRODUCT_NAME := viper_woods
 PRODUCT_BRAND := Motorola
 PRODUCT_MODEL := Moto E4
 PRODUCT_MANUFACTURER := Motorola

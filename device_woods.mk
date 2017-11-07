@@ -127,7 +127,7 @@ PRODUCT_PACKAGES += \
 
 # Messaging
 PRODUCT_PACKAGES += \
-    Messaging
+    messaging
 
 ## CM14 mtk symbols
 PRODUCT_PACKAGES += \

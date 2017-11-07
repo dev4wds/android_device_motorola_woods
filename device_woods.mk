@@ -125,6 +125,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
+# Messaging
+PRODUCT_PACKAGES += \
+    Messaging
+
 ## CM14 mtk symbols
 PRODUCT_PACKAGES += \
     mtk_symbols

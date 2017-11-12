@@ -26,7 +26,7 @@ Other Sources: ( cloning )
 
 * Device Tree
   -------------
-```git clone https://github.com/dev4wds/android_device_motorola_woods -b xenonhd-n device/motorola/woods ```
+```git clone https://github.com/dev4wds/android_device_motorola_woods -b viper-n device/motorola/woods ```
 
 * Kernel Source
   ---------------

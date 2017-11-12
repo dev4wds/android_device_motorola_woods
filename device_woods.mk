@@ -129,6 +129,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     mtk_symbols
 
+# Ambient display
+PRODUCT_PACKAGES += \
+    CMDoze
+
 # Power
 PRODUCT_PACKAGES += \
     power.mt6737m

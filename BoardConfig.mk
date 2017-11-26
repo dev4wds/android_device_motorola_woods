@@ -128,6 +128,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 # Audio
 BOARD_USES_MTK_AUDIO := true
 
+<<<<<<< HEAD
 # CMHW
 <<<<<<< HEAD
 BOARD_USES_CYANOGEN_HARDWARE := true
@@ -136,6 +137,10 @@ BOARD_HARDWARE_CLASS := device/motorola/woods/cmhw
 #BOARD_USES_CYANOGEN_HARDWARE := true
 #BOARD_HARDWARE_CLASS := device/moto/e4/cmhw
 >>>>>>> 49369c4... bringup O
+=======
+# Lineage Hardware
+BOARD_HARDWARE_CLASS += device/moto/e4/lineagehw
+>>>>>>> a363983... lineagehw: Apply LineageOS rebrand && update init.mt6735.rc
 
 # Fix video autoscaling on old OMX decoders
 #TARGET_OMX_LEGACY_RESCALING := true

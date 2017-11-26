@@ -43,9 +43,14 @@ PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
+<<<<<<< HEAD:device_woods.mk
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
    
 PRODUCT_COPY_FILES += \
+=======
+    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml \
+>>>>>>> 49369c4... bringup O:device_e4.mk
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.manual_sensor.xml:system/etc/permissions/android.hardware.camera.manual_sensor.xml \
@@ -66,7 +71,14 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml
 
     
+<<<<<<< HEAD:device_woods.mk
 PRODUCT_TAGS += dalvik.gc.type-precise
+=======
+# HIDL
+PRODUCT_COPY_FILES += \
+    device/moto/e4/hidl/manifest.xml:system/vendor/manifest.xml
+    
+>>>>>>> 49369c4... bringup O:device_e4.mk
 
 # RAMDISK
 PRODUCT_COPY_FILES += \
@@ -76,15 +88,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
     $(LOCAL_PATH)/rootdir/init.mt6735.rc:root/init.mt6735.rc \
     $(LOCAL_PATH)/rootdir/fstab.mt6735:root/fstab.mt6735 \
-    $(LOCAL_PATH)/rootdir/enableswap.sh:root/enableswap.sh \
-    $(LOCAL_PATH)/rootdir/init.rc:root/init.rc \
-    $(LOCAL_PATH)/rootdir/sbin/busybox:root/sbin/busybox \
     $(LOCAL_PATH)/rootdir/init.microtrust.rc:root/init.microtrust.rc \
     $(LOCAL_PATH)/rootdir/init.connectivity.rc:root/init.connectivity.rc \
     $(LOCAL_PATH)/rootdir/init.mt6735.power.rc:root/init.mt6735.power.rc
 
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.audio@2.0-service \
     audio.a2dp.default \
     audio.r_submix.default \
     libaudio-resampler \
@@ -95,31 +107,48 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
     dhcpcd.conf \
     hostapd \
+    wificond \
     libwpa_client \
     wpa_supplicant \
-    wpa_supplicant.conf \
-    lib_driver_cmd_mt66xx
-     
+    wpa_supplicant.conf
+
+
 PRODUCT_PACKAGES += \
     librs_jni \
     com.android.future.usb.accessory
 
 PRODUCT_PACKAGES += \
-    charger \
     libnl_2 \
-    libion \
-    fingerprintd
+    libion
     
 # Charger Mode
 PRODUCT_PACKAGES += \
     charger_res_images
+    
+# Storage
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=true
+    
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service
+    
+# Camera HAL
+PRODUCT_PACKAGES += \
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service
 
 # FM Radio
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
+#PRODUCT_PACKAGES += \
+#    android.hardware.broadcastradio@1.0-impl \
+#    FMRadio \
+#    libfmjni
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -128,18 +157,85 @@ PRODUCT_PACKAGES += \
 ## CM14 mtk symbols
 PRODUCT_PACKAGES += \
     mtk_symbols
+    
+# Fingerprint HAL
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service
 
 # Power
 PRODUCT_PACKAGES += \
     power.mt6737m
+    
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
+    
+# Keymaster HAL
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
+    
+# Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.mt6737m
+    
+# Sensors HAL
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
+   
+# Drm HAL 
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl
+    
+# GPS HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
+    
+# GPS force mode
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.force.gps.mode=gnss
+    
+# USB HAL
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
+    
+# Health HAL
+PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-service
+    
+# Power HAL
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl
+    
+# Graphic HAL
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.renderscript@1.0-impl \
+    android.hardware.memtrack@1.0-impl \
+    libgralloc_extra \
+    libgui_ext \
+    libui_ext
+    
+# Omx HAL
+PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.mount.fs=EXT4 \
-	ro.adb.secure=0 \
-	ro.secure=0 \
 	ro.allow.mock.location=0 \
 	ro.debuggable=1 \
-	persist.service.acm.enable=0 \
 	ro.config.low_ram=false
 
 # IO Scheduler

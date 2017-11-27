@@ -80,7 +80,11 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_KMODULES := true
 
 # Assert
+<<<<<<< HEAD
 TARGET_OTA_ASSERT_DEVICE := Moto_E4,Moto E4,moto_e4,e4,woods,woods_f
+=======
+TARGET_OTA_ASSERT_DEVICE := Moto_woods,Moto woods,woods,woods
+>>>>>>> f7882e1... set to: woods | motorola
 
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
@@ -98,11 +102,15 @@ TARGET_SENSORS_DEVICE_API_VERSION := SENSORS_DEVICE_API_VERSION_1_1
 
 # Graphics
 <<<<<<< HEAD
+<<<<<<< HEAD
 BOARD_EGL_CFG := /vendor/motorola/woods/vendor/lib/egl/egl.cfg
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 USE_OPENGL_RENDERER := true
 =======
 BOARD_EGL_CFG := /vendor/moto/e4/vendor/lib/egl/egl.cfg
+=======
+BOARD_EGL_CFG := /vendor/motorola/woods/vendor/lib/egl/egl.cfg
+>>>>>>> f7882e1... set to: woods | motorola
 USE_OPENGL_RENDERER:=true
 >>>>>>> 49369c4... bringup O
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -139,8 +147,12 @@ BOARD_HARDWARE_CLASS := device/motorola/woods/cmhw
 >>>>>>> 49369c4... bringup O
 =======
 # Lineage Hardware
+<<<<<<< HEAD
 BOARD_HARDWARE_CLASS += device/moto/e4/lineagehw
 >>>>>>> a363983... lineagehw: Apply LineageOS rebrand && update init.mt6735.rc
+=======
+BOARD_HARDWARE_CLASS += device/motorola/woods/lineagehw
+>>>>>>> f7882e1... set to: woods | motorola
 
 # Fix video autoscaling on old OMX decoders
 #TARGET_OMX_LEGACY_RESCALING := true
@@ -219,6 +231,7 @@ BOARD_SEPOLICY_DIRS := \
 
 # Seccomp filter
 <<<<<<< HEAD
+<<<<<<< HEAD
 BOARD_SECCOMP_POLICY += device/motorola/woods/seccomp
 =======
 BOARD_SECCOMP_POLICY += device/moto/e4/seccomp
@@ -226,3 +239,9 @@ BOARD_SECCOMP_POLICY += device/moto/e4/seccomp
 #HIDL
 DEVICE_MANIFEST_FILE := device/moto/e4/hidl/manifest.xml
 >>>>>>> 49369c4... bringup O
+=======
+BOARD_SECCOMP_POLICY += device/motorola/woods/seccomp
+
+#HIDL
+DEVICE_MANIFEST_FILE := device/motorola/woods/hidl/manifest.xml
+>>>>>>> f7882e1... set to: woods | motorola

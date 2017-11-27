@@ -2,6 +2,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+<<<<<<< HEAD
 <<<<<<< HEAD:device_woods.mk
 LOCAL_PATH := device/motorola/woods
 
@@ -11,12 +12,20 @@ DEVICE_PACKAGE_OVERLAYS += device/motorola/woods/overlay
 PRODUCT_PACKAGE_OVERLAYS += device/motorola/woods/overlay # enable this to be able overlay a default wallpaper
 =======
 LOCAL_PATH := device/moto/woods
+=======
+LOCAL_PATH := device/motorola/woods
+>>>>>>> f7882e1... set to: woods | motorola
 
-$(call inherit-product-if-exists, vendor/moto/woods/woods-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/woods/woods-vendor.mk)
 
+<<<<<<< HEAD
 DEVICE_PACKAGE_OVERLAYS += device/moto/woods/overlay
 PRODUCT_PACKAGE_OVERLAYS += device/moto/woods/overlay # enable this to be able overlay a default wallpaper
 >>>>>>> e7780c9... Update and rename device_e4.mk to device_woods.mk:device_woods.mk
+=======
+DEVICE_PACKAGE_OVERLAYS += device/motorola/woods/overlay
+PRODUCT_PACKAGE_OVERLAYS += device/motorola/woods/overlay # enable this to be able overlay a default wallpaper
+>>>>>>> f7882e1... set to: woods | motorola
 
 # Dalvik/HWUI
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
@@ -85,7 +94,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 =======
 # HIDL
 PRODUCT_COPY_FILES += \
-    device/moto/woods/hidl/manifest.xml:system/vendor/manifest.xml
+    device/motorola/woods/hidl/manifest.xml:system/vendor/manifest.xml
     
 >>>>>>> 49369c4... bringup O:device_e4.mk
 

@@ -81,10 +81,14 @@ TARGET_KMODULES := true
 
 # Assert
 <<<<<<< HEAD
+<<<<<<< HEAD
 TARGET_OTA_ASSERT_DEVICE := Moto_E4,Moto E4,moto_e4,e4,woods,woods_f
 =======
 TARGET_OTA_ASSERT_DEVICE := Moto_woods,Moto woods,woods,woods
 >>>>>>> f7882e1... set to: woods | motorola
+=======
+TARGET_OTA_ASSERT_DEVICE := Moto_E4,woods,woods_retail,e4
+>>>>>>> 3354fd2... update OTA Assert
 
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true

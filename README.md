@@ -118,4 +118,13 @@ Comment line : ```227```
 Comment line : ```401```
 
 ```nano system/core/init/init.cpp```
+<<<<<<< HEAD
 >>>>>>> ddccb26... add NOTE :
+=======
+
+Copy this ```SkUserConfig.h``` to destination ```external/skia/include/core```  with below command  
+
+```cp external/skia/include/config/SkUserConfig.h external/skia/include/core```
+
+- -
+>>>>>>> 1d75e57... Important

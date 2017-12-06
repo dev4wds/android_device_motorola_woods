@@ -83,6 +83,7 @@ TARGET_KMODULES := true
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 TARGET_OTA_ASSERT_DEVICE := Moto_E4,Moto E4,moto_e4,e4,woods,woods_f
 =======
 TARGET_OTA_ASSERT_DEVICE := Moto_woods,Moto woods,woods,woods
@@ -93,6 +94,10 @@ TARGET_OTA_ASSERT_DEVICE := Moto_E4,woods,woods_retail,e4
 =======
 TARGET_OTA_ASSERT_DEVICE := Moto_E4,Moto E4,moto_e4,e4,woods,woods_f
 >>>>>>> 98f510a... OTA Assert update
+=======
+TARGET_OTA_ASSERT_DEVICE := Moto_E4,Moto E4,moto_e4,e4,woods,woods_f,woods_retail
+TARGET_CUSTOM_BINARY := device/motorola/woods/configs/updater
+>>>>>>> c95cdbd... add several configurations
 
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
@@ -169,7 +174,7 @@ BOARD_HARDWARE_CLASS += device/motorola/woods/lineagehw
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/motorola/woods/ril/
+#BOARD_RIL_CLASS := ../../../device/motorola/woods/ril/
 
 # GPS
 BOARD_GPS_LIBRARIES :=true
@@ -177,19 +182,21 @@ BOARD_CONNECTIVITY_MODULE := MT6625
 BOARD_MEDIATEK_USES_GPS := true
 
 # Wireless
-BOARD_WLAN_DEVICE := MediaTek
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mt66xx
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+# MTK_WLAN_SUPPORT
+BOARD_WLAN_DEVICE		 := MediaTek
+BOARD_CONNECTIVITY_VENDOR        := MediaTek
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_mt66xx
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mt66xx
-WIFI_DRIVER_FW_PATH_PARAM := /dev/wmtWifi
-WIFI_DRIVER_FW_PATH_AP := AP
-WIFI_DRIVER_FW_PATH_STA := STA
-WIFI_DRIVER_FW_PATH_P2P := P2P
-WIFI_DRIVER_STATE_CTRL_PARAM := /dev/wmtWifi
-WIFI_DRIVER_STATE_ON := 1
-WIFI_DRIVER_STATE_OFF := 0
+WIFI_DRIVER_FW_PATH_PARAM        := "/dev/wmtWifi"
+WIFI_DRIVER_FW_PATH_STA          := STA
+WIFI_DRIVER_FW_PATH_AP           := AP
+WIFI_DRIVER_FW_PATH_P2P          := P2P
+WIFI_DRIVER_STATE_CTRL_PARAM	 := "/dev/wmtWifi"
+WIFI_DRIVER_STATE_ON		 := 1
+WIFI_DRIVER_STATE_OFF	:= 0
 
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
@@ -198,17 +205,39 @@ USE_MINIKIN := true
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
+# LED Path
+BOARD_RED_LED_PATH	:= "/sys/class/leds/test-led"
+BOARD_GREEN_LED_PATH	:= "/sys/class/leds/greenled"
+
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-#BOARD_HAVE_BLUETOOTH_MTK := true
-#BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
+BOARD_HAVE_BLUETOOTH_MTK := true
+BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
 BOARD_BLUETOOTH_BDROID_HCILP_INCLUDED := 0
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/motorola/woods/bluetooth
 
 TARGET_LDPRELOAD += mtk_symbols.so
+
+# Disable memcpy opt (for audio libraries)
+TARGET_CPU_MEMCPY_OPT_DISABLE := true
+
+# MTK Hardware
+BOARD_USES_MTK_HARDWARE := true
+BOARD_USES_LEGACY_MTK_AV_BLOB := true
+BOARD_USES_MTK_AUDIO := true
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+USE_CAMERA_STUB := true
+BOARD_PROVIDES_RILD := true
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_mtk
+
+BOARD_DISABLE_HW_ID_MATCH_CHECK := true
+SUPPRESS_MTK_AUDIO_BLOB_ERR_MSG := true
+
+# Deodex
+WITH_DEXPREOPT := false
 
 # CWM
 TARGET_RECOVERY_FSTAB := device/motorola/woods/rootdir/recovery.fstab
@@ -233,6 +262,9 @@ TW_REBOOT_RECOVERY := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_EXCLUDE_SUPERSU := true
 TW_USE_TOOLBOX := true
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+TW_DEFAULT_LANGUAGE := en
+HAVE_SELINUX := true
 
 TARGET_SYSTEM_PROP := device/motorola/woods/system.prop
 TARGET_SPECIFIC_HEADER_PATH := device/motorola/woods/include

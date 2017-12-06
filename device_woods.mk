@@ -121,7 +121,8 @@ PRODUCT_PACKAGES += \
     libtinyalsa \
     libtinycompress \
     libtinymix \
-    libtinyxml
+    libtinyxml \
+    SoundRecorder
 
 # WiFi
 PRODUCT_PACKAGES += \
@@ -135,12 +136,19 @@ PRODUCT_PACKAGES += \
 
 
 PRODUCT_PACKAGES += \
+	com.android.future.usb.accessory \
     librs_jni \
-    com.android.future.usb.accessory
+    libemoji \
+    libnl_2
 
 PRODUCT_PACKAGES += \
     libnl_2 \
-    libion
+    libion \
+    fingerprintd
+
+PRODUCT_PACKAGES += \
+    PerformanceControl \
+	Stk
     
 # Charger Mode
 PRODUCT_PACKAGES += \
@@ -163,10 +171,10 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service
 
 # FM Radio
-#PRODUCT_PACKAGES += \
-#    android.hardware.broadcastradio@1.0-impl \
-#    FMRadio \
-#    libfmjni
+PRODUCT_PACKAGES += \
+    android.hardware.broadcastradio@1.0-impl \
+    FMRadio \
+    libfmjni
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -267,6 +275,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.android.checkjni=0
+    
+PRODUCT_PACKAGES += \
+    libccci_util \
+    librilmtk \
+    mtkrild
 
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0

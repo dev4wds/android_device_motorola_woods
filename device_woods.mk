@@ -280,10 +280,13 @@ PRODUCT_PACKAGES += \
     libccci_util \
     librilmtk \
     mtkrild
+<<<<<<< HEAD
 
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 ADDITIONAL_DEFAULT_PROPERTIES += persist.service.adb.enable=1
+=======
+>>>>>>> bdf9076... add several packages
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp

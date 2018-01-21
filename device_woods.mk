@@ -2,42 +2,25 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-<<<<<<< HEAD
-<<<<<<< HEAD:device_woods.mk
 LOCAL_PATH := device/motorola/woods
 
 $(call inherit-product-if-exists, vendor/motorola/woods/woods-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/woods/overlay
 PRODUCT_PACKAGE_OVERLAYS += device/motorola/woods/overlay # enable this to be able overlay a default wallpaper
-=======
-LOCAL_PATH := device/moto/woods
-=======
-LOCAL_PATH := device/motorola/woods
->>>>>>> f7882e1... set to: woods | motorola
-
-$(call inherit-product-if-exists, vendor/motorola/woods/woods-vendor.mk)
-
-<<<<<<< HEAD
-DEVICE_PACKAGE_OVERLAYS += device/moto/woods/overlay
-PRODUCT_PACKAGE_OVERLAYS += device/moto/woods/overlay # enable this to be able overlay a default wallpaper
->>>>>>> e7780c9... Update and rename device_e4.mk to device_woods.mk:device_woods.mk
-=======
-DEVICE_PACKAGE_OVERLAYS += device/motorola/woods/overlay
-PRODUCT_PACKAGE_OVERLAYS += device/motorola/woods/overlay # enable this to be able overlay a default wallpaper
->>>>>>> f7882e1... set to: woods | motorola
 
 # Dalvik/HWUI
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
+PRODUCT_TAGS += dalvik.gc.type-precise
 
 # set locales & aapt config.
 PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-PRODUCT_DEFAULT_LANGUAGE := en
-PRODUCT_DEFAULT_REGION   := US
+PRODUCT_DEFAULT_LANGUAGE := ru
+PRODUCT_DEFAULT_REGION   := RU
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -58,22 +41,18 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
-<<<<<<< HEAD:device_woods.mk
-    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
-   
-PRODUCT_COPY_FILES += \
-=======
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml \
->>>>>>> 49369c4... bringup O:device_e4.mk
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.manual_sensor.xml:system/etc/permissions/android.hardware.camera.manual_sensor.xml \
     frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml
 
+# LivePicker
+PRODUCT_COPY_FILES += \
+    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 # Media	
 PRODUCT_COPY_FILES += \
@@ -87,18 +66,13 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:/system/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml
-
     
-<<<<<<< HEAD:device_woods.mk
-PRODUCT_TAGS += dalvik.gc.type-precise
-=======
 # HIDL
 PRODUCT_COPY_FILES += \
     device/motorola/woods/hidl/manifest.xml:system/vendor/manifest.xml
     
->>>>>>> 49369c4... bringup O:device_e4.mk
 
-# RAMDISK
+# Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.project.rc:root/init.project.rc \
     $(LOCAL_PATH)/rootdir/init.modem.rc:root/init.modem.rc \
@@ -180,7 +154,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
-## CM14 mtk symbols
+# CM14 mtk symbols
 PRODUCT_PACKAGES += \
     mtk_symbols
     
@@ -258,6 +232,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0
 
+# Disable adb security
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.mount.fs=EXT4 \
 	ro.allow.mock.location=0 \
@@ -280,13 +255,6 @@ PRODUCT_PACKAGES += \
     libccci_util \
     librilmtk \
     mtkrild
-<<<<<<< HEAD
-
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
-ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
-ADDITIONAL_DEFAULT_PROPERTIES += persist.service.adb.enable=1
-=======
->>>>>>> bdf9076... add several packages
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
@@ -299,3 +267,4 @@ PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
 
 # Never dexopt the keyhandler
 $(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
+

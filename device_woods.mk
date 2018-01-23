@@ -21,6 +21,11 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_DEFAULT_LANGUAGE := en
 PRODUCT_DEFAULT_REGION   := US
 
+# Bootanimation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
+DEVICE_RESOLUTION := 720x1280
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -132,6 +137,10 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     power.mt6737m
+
+# LiveDisplay native
+PRODUCT_PACKAGES += \
+    libjni_livedisplay
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.mount.fs=EXT4 \

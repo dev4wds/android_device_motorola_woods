@@ -22,6 +22,22 @@ ro.opengles.version=196609
 # USB MTP WHQL
 ro.sys.usb.mtp.whql.enable=0
 
+##### { start,,add [23/02/2k18] !!
+# Google
+ro.opa.eligible_device=true
+
+# performance
+ro.mtk_perf_simple_start_win=1
+ro.mtk_perf_fast_start_win=1
+ro.mtk_perf_response_time=1
+
+# test VoLTE (not sure , maybe for haters , xD)
+persist.mtk_volte_support=1
+persist.mtk.volte.enable=1
+persist.mtk_vilte_support=1
+ro.mtk_vilte_ut_support=0
+##### { end [23/02/2k18] !!
+
 # Power off opt in IPO
 sys.ipo.pwrdncap=2
 

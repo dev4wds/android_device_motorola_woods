@@ -168,6 +168,14 @@ TARGET_LDPRELOAD += mtk_symbols.so
 TARGET_RECOVERY_FSTAB := device/motorola/woods/rootdir/recovery.fstab
 BOARD_HAS_NO_SELECT_BUTTON := true
 
+# Dex
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT ?= true
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
+
 # TWRP stuff
 TW_THEME := portrait_hdpi
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
@@ -202,4 +210,4 @@ BOARD_SEPOLICY_DIRS := \
 BOARD_SECCOMP_POLICY += device/motorola/woods/seccomp
 
 # add prebuilt bootanimation
--include device/motorola/woods/vendor/dev4wds/common.mk
+#-include device/motorola/woods/vendor/dev4wds/common.mk

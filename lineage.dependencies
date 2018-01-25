@@ -1,0 +1,6 @@
+[
+  {
+    "repository": "prebuilts_gcc_arm_eabi_4.9",
+    "target_path": "prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-uber"
+  }
+]

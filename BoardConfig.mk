@@ -61,6 +61,9 @@ KERNEL_ARCH := arm
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := woods_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi
+# Use UberTC 4.9 toolchain
+KERNEL_TOOLCHAIN_PREFIX:=$(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-uber/bin/arm-eabi-
+
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,32N2 androidboot.selinux=permissive androidboot.selinux=disabled 
 BOARD_KERNEL_OFFSET := 0x00008000
 else

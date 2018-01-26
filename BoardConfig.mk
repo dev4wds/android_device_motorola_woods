@@ -60,13 +60,9 @@ TARGET_ARCH := arm
 KERNEL_ARCH := arm
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := woods_defconfig
-#Prebuilt_Kernel
-#TARGET_PREBUILT_KERNEL := device/motorola/woods/kernel/woods/zImage-dtb
-
-TARGET_MTK_KERNEL := true
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi
 # Use UberTC 4.9 toolchain
-KERNEL_TOOLCHAIN_PREFIX:=$(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-uber/bin/arm-eabi-
+KERNEL_TOOLCHAIN_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-uber/bin/arm-eabi-
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,32N2 androidboot.selinux=permissive androidboot.selinux=disabled 
 BOARD_KERNEL_OFFSET := 0x00008000
@@ -78,6 +74,10 @@ TARGET_USES_64_BIT_BINDER := true
 endif
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 
+#Prebuilt_Kernel
+#TARGET_PREBUILT_KERNEL := device/motorola/woods/kernel/zImage-dtb
+
+TARGET_MTK_KERNEL := true
 #CUstom TC
 TARGET_TC_KERNEL := 4.9-uber
 
@@ -250,7 +250,7 @@ DEVICE_MANIFEST_FILE := device/motorola/woods/hidl/manifest.xml
 #TARGET_BLOBS_BYPASS_SYMBOL_ERR := true
 
 # CM SEPolicy flags
-TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+#TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # Hack for build
-$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+#$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)

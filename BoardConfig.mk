@@ -246,3 +246,11 @@ BOARD_SECCOMP_POLICY += device/motorola/woods/seccomp
 #HIDL
 DEVICE_MANIFEST_FILE := device/motorola/woods/hidl/manifest.xml
 
+# Hack for build
+#TARGET_BLOBS_BYPASS_SYMBOL_ERR := true
+
+# CM SEPolicy flags
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+
+# Hack for build
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)

@@ -36,18 +36,18 @@ Thanks to olegsvs, danielhk, Zormax, xcore995, SRT.
 
 ### NOTE :
 
-Apply these manual edit to lineage-15.0 source 
+Apply these manual edit to lineage-15.0/15.1 source 
 before building the rom
 
 with nano editor, edit these files by Commenting the line :
 
 in ( system/sepolicy/public ) 
  ```domain.te``` 
- [ line number : ```227``` ]
+ [ line number : ```227 on 15.0``` & or ```230 on 15.1```  ]
  
  in ( system/core/init ) 
  ```init.cpp```
- [ line number : ```401``` ]
+ [ line number : ```401 on 15.0``` & or ```434 on 15.1```  ]
 
 
 example :

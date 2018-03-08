@@ -60,7 +60,7 @@ TARGET_ARCH := arm
 KERNEL_ARCH := arm
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := woods_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 # Use UberTC 4.9 toolchain
 KERNEL_TOOLCHAIN_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-uber/bin/arm-eabi-
 
